@@ -1,4 +1,4 @@
-package top.mask.es;
+package top.mask.es.index;
 
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
