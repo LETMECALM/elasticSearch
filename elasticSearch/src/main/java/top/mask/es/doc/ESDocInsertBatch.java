@@ -33,7 +33,7 @@ public class ESDocInsertBatch {
         request.add(new IndexRequest().index("es-doc-batch").id("1003").source(XContentType.JSON,"name","王武","age",50,"granger","男"));
         request.add(new IndexRequest().index("es-doc-batch").id("1004").source(XContentType.JSON,"name","王武1","age",60,"granger","男"));
         request.add(new IndexRequest().index("es-doc-batch").id("1005").source(XContentType.JSON,"name","王武2","age",70,"granger","男"));
-        request.add(new IndexRequest().index("es-doc-batch").id("1006").source(XContentType.JSON,"name","王武3"));
+        request.add(new IndexRequest().index("es-doc-batch").id("1006").source(XContentType.JSON,"name","王武3","age",70,"granger","男"));
         BulkResponse response = esClient.bulk(request, RequestOptions.DEFAULT);
 
         System.out.println(response.getTook());
