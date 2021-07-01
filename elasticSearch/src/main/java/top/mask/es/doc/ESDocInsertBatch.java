@@ -28,9 +28,12 @@ public class ESDocInsertBatch {
 
         //批量插入数据
         BulkRequest request = new BulkRequest();
-        request.add(new IndexRequest().index("es-doc-batch").id("1001").source(XContentType.JSON,"name","张三"));
-        request.add(new IndexRequest().index("es-doc-batch").id("1002").source(XContentType.JSON,"name","李四"));
-        request.add(new IndexRequest().index("es-doc-batch").id("1003").source(XContentType.JSON,"name","王武"));
+        request.add(new IndexRequest().index("es-doc-batch").id("1001").source(XContentType.JSON,"name","张三","age",30,"granger","男"));
+        request.add(new IndexRequest().index("es-doc-batch").id("1002").source(XContentType.JSON,"name","李四","age",40,"granger","男"));
+        request.add(new IndexRequest().index("es-doc-batch").id("1003").source(XContentType.JSON,"name","王武","age",50,"granger","男"));
+        request.add(new IndexRequest().index("es-doc-batch").id("1004").source(XContentType.JSON,"name","王武1","age",60,"granger","男"));
+        request.add(new IndexRequest().index("es-doc-batch").id("1005").source(XContentType.JSON,"name","王武2","age",70,"granger","男"));
+        request.add(new IndexRequest().index("es-doc-batch").id("1006").source(XContentType.JSON,"name","王武3"));
         BulkResponse response = esClient.bulk(request, RequestOptions.DEFAULT);
 
         System.out.println(response.getTook());
